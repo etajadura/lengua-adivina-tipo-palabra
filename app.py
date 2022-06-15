@@ -31,6 +31,7 @@ def cargar_palabras_mix(palabras):
     palabras_mix = random.sample(palabras, len(palabras))
     palabras_mix.insert(0,'')
     return palabras_mix
+
 @st.cache
 def cargar_posicion(tipos):
     posicion = random.choice(range(0, len(tipos)))
@@ -78,6 +79,6 @@ if __name__ == '__main__':
     elif (len(opcion)> 0):
         st.error("Estudia más o vuelve a intantarlo.")
         st.warning(descripciones[posicion])
-    #if st.button("Prueba de nuevo"):
-        #st.legacy_caching.clear_cache()
+    if st.button("Prueba de nuevo"):
+        st.legacy_caching.clear_cache()
     #if my_slot1.button("Clear"):
