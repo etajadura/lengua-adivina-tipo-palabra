@@ -63,10 +63,10 @@ if __name__ == '__main__':
         "Los adverbios son palabras invariables que nombran circunstancias de lugar, tiempo, modo o \n cantidad, o expresan negación, afirmación o duda.",
         "Las preposiciones son aquellas palabras que se utilizan para poder formar las oraciones y para \n relacionar las ideas que por lo general encontramos dentro de la misma."]
 
+    palabras_mix = cargar_palabras()
     palabras = cargar_palabras()
-
-    palabras_mix = cargar_palabras_mix(palabras)
-    posicion =cargar_posicion(tipos)
+    #palabras_mix = cargar_palabras_mix(palabras)
+    posicion = cargar_posicion(tipos)
     tipo = tipos[posicion]
     descripcion = descripciones [posicion]
 
