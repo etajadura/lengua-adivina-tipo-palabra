@@ -8,7 +8,7 @@ def cargar_lista(name):
             datos.append(linea)
     return datos
 
-def elige_opcion(options):
+def elige_opcion(options, tipo):
     print(f"¿Cual de todas las palabras es un/a {tipo}?")
     print("Elige una opción:")
     for idx, element in enumerate(options):
@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
     palabras = [adjetivo, sustantivo, adverbio, preposicion]
     palabras_mix = random.sample(palabras, len(palabras))
-    opcion = elige_opcion(palabras_mix)
+    opcion = elige_opcion(palabras_mix, tipo)
     if opcion is not None:
         palabra_correcta =palabras[posicion]
         resultado_numero = palabras_mix.index(palabra_correcta)
