@@ -1,5 +1,5 @@
 import streamlit as st
-
+import numpy as np
 import random
 
 
@@ -28,7 +28,8 @@ def cargar_palabras() :
 
 @st.cache
 def cargar_palabras_mix(palabras):
-    palabras_mix = random.sample(palabras)
+    palabras_mix = palabras.copy()
+    np.random.shuffle(palabras_mix)
     palabras_mix.insert(0,'')
     return palabras_mix
 
