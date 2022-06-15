@@ -75,10 +75,11 @@ if __name__ == '__main__':
     opcion = st.radio(f"¿Cual de todas las palabras es un/a {tipo}?", palabras_mix, index=0)
     if (opcion == palabras[posicion]):
         st.success("BIEEEEEENNNNNNNNNNN")
-        st.video("https://www.youtube.com/watch?v=bi2v08KUbNQ")
+        st.video("https://www.youtube.com/watch?v=EBkI0XM8Wtg")
     elif (len(opcion)> 0):
         st.error("Estudia más o vuelve a intantarlo.")
         st.warning(descripciones[posicion])
+        st.video("https://www.youtube.com/watch?v=EZmQR8BYGEU)
     if st.button("Prueba de nuevo"):
         st.legacy_caching.clear_cache()
     #if my_slot1.button("Clear"):
