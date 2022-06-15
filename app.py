@@ -29,7 +29,7 @@ def cargar_palabras() :
 @st.cache
 def cargar_palabras_mix(palabras):
     palabras_mix = random.sample(palabras, len(palabras))
-    palabras_mix.insert(0,'')
+    #palabras_mix.insert(0,'')
     return palabras_mix
 
 @st.cache
