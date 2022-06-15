@@ -79,5 +79,5 @@ if __name__ == '__main__':
         st.error("Estudia más o vuelve a intantarlo.")
         st.warning(descripciones[posicion])
     if st.button("Prueba de nuevo"):
-        st.legacy_caching.clear_cache()
+        #st.legacy_caching.clear_cache()
     #if my_slot1.button("Clear"):
