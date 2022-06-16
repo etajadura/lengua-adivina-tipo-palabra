@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import random
-
+import time
 
 def cargar_lista(name):
     datos=[]
@@ -54,6 +54,8 @@ def add_empty_value_to_list(lista):
         print(type(a))
         out.append(a)
     return out
+
+
 if __name__ == '__main__':
 
 
@@ -69,17 +71,35 @@ if __name__ == '__main__':
     posicion = cargar_posicion(tipos)
     tipo = tipos[posicion]
     descripcion = descripciones [posicion]
-
     st.title("Adivina el tipo de palabra")
-    st.markdown("Recuerda que si el botón PRUEBA DE NUEVO está bordeado en rojo una vez que lo has usado, deberas tocar sobre un espacio en blanco . ")
+
+    with open("main.css") as f:
+        st.markdown(f"""<style>{f.read()}</style>""", unsafe_allow_html=True)
     opcion = st.radio(f"¿Cual de todas las palabras es un/a {tipo}?", palabras_mix, index=0)
+
+
     if (opcion == palabras[posicion]):
         st.success("BIEEEEEENNNNNNNNNNN")
         st.video("https://www.youtube.com/watch?v=EBkI0XM8Wtg")
-    elif (len(opcion)> 0):
+        if st.button("Quiero un nuevo reto"):
+            st.legacy_caching.clear_cache()
+            my_bar = st.progress(0)
+
+            for percent_complete in range(100):
+                time.sleep(0.01)
+                my_bar.progress(percent_complete + 1)
+            st.button("Pulsa aquí :)")
+            st.empty()
+    elif (len(opcion) > 0):
         st.error("Estudia más o vuelve a intantarlo.")
         st.warning(descripciones[posicion])
-        st.video("https://www.youtube.com/watch?v=EZmQR8BYGEU")
-    if st.button("Prueba de nuevo"):
-        st.legacy_caching.clear_cache()
-    #if my_slot1.button("Clear"):
+        st.video("https://www.youtube.com/watch?v=7jLmYrhNq0s")
+        if st.button("Déjame intentarlo otra vez"):
+            st.legacy_caching.clear_cache()
+            with st.spinner('Wait for it...'):
+                time.sleep(1)
+
+            st.button("Pulsa aquí")
+            st.empty()
+
+
