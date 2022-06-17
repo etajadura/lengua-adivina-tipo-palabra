@@ -91,7 +91,7 @@ if __name__ == '__main__':
             st.button("Pulsa aquí :)")
             st.empty()
     elif (len(opcion) > 0):
-        st.error("Estudia más o vuelve a intantarlo.")
+        st.error("Estudia más o vuelve a intentarlo.")
         st.warning(descripciones[posicion])
         st.video("https://www.youtube.com/watch?v=7jLmYrhNq0s")
         if st.button("Déjame intentarlo otra vez"):
